@@ -16,7 +16,7 @@ We uploaded our models to HuggingFace hub.
     * [ckiplab/oldhan-bert-base-chinese-ws](https://huggingface.co/ckiplab/oldhan-bert-base-chinese-ws) (word Segmentation)
 
 ## Usage
----
+
 ### Installation
 ```bash
 pip install transformers
@@ -96,3 +96,17 @@ pip install torch
     'start': 4,
     'end': 5}]
     ```
+
+## Training Corpus
+The copyright of the datasets belongs to the Institute of Linguistics, Academia Sinica.
+* [中央研究院上古漢語標記語料庫](http://lingcorpus.iis.sinica.edu.tw/cgi-bin/kiwi/akiwi/kiwi.sh?ukey=-406192123&qtype=-1)
+* [中央研究院中古漢語語料庫](http://lingcorpus.iis.sinica.edu.tw/cgi-bin/kiwi/dkiwi/kiwi.sh?ukey=852967425&qtype=-1)
+* [中央研究院近代漢語語料庫](http://lingcorpus.iis.sinica.edu.tw/cgi-bin/kiwi/pkiwi/kiwi.sh?ukey=-299696128&qtype=-1)
+* [中央研究院現代漢語語料庫](http://lingcorpus.iis.sinica.edu.tw/cgi-bin/kiwi/mkiwi/kiwi.sh)
+
+
+## License
+[<img src="https://www.gnu.org/graphics/gplv3-with-text-136x68.png">
+](https://www.gnu.org/licenses/gpl-3.0.html)
+
+Copyright (c) 2022 [CKIP Lab](https://ckip.iis.sinica.edu.tw/) under the [GPL-3.0 License](https://www.gnu.org/licenses/gpl-3.0.html).
