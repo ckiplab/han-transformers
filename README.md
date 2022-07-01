@@ -27,13 +27,18 @@ pip install torch
 
 * Pre-trained Language Model
 
-    You can use [ckiplab/oldhan-bert-base-chinese](https://huggingface.co/ckiplab/oldhan-bert-base-chinese) directly with a pipeline for masked language modeling:
+    You can use [ckiplab/oldhan-bert-base-chinese](https://huggingface.co/ckiplab/oldhan-bert-base-chinese) directly with a pipeline for masked language modeling.
 
     ```python
-    >>> from transformers import pipeline
-    >>> unmasker = pipeline('fill-mask', model='ckiplab/oldhan-bert-base-chinese')
-    >>> unmasker("黎[MASK]於變時雍。")
+    from transformers import pipeline
 
+    # Initialize 
+    unmasker = pipeline('fill-mask', model='ckiplab/oldhan-bert-base-chinese')
+
+    # Input text with [MASK]
+    unmasker("黎[MASK]於變時雍。")
+
+    # output
     [{'sequence': '黎 民 於 變 時 雍 。',
     'score': 0.14885780215263367,
     'token': 3696,
@@ -56,15 +61,41 @@ pip install torch
     'token_str': '生'}]
     ```
 
+    You can use [ckiplab/oldhan-bert-base-chinese](https://huggingface.co/ckiplab/oldhan-bert-base-chinese) to get the features of a given text in PyTorch.
+    
+    ```python
+    from transformers import AutoTokenizer, AutoModel
+
+    # Initialize tokenzier and model
+    tokenizer = AutoTokenizer.from_pretrained("ckiplab/oldhan-bert-base-chinese")
+    model = AutoModel.from_pretrained("ckiplab/oldhan-bert-base-chinese")
+
+    # Input text
+    text = "黎民於變時雍。"
+    encoded_input = tokenizer(text, return_tensors='pt')
+    output = model(**encoded_input)
+
+    # get encoded token vectors
+    output.last_hidden_state    # torch.Tensor with Size([1, 9, 768])
+    
+    # get encoded sentence vector
+    output.pooler_output        # torch.Tensor with Size([1, 768])
+    ```
+
 * Part-of-Speech (PoS) Tagging
 
     In PoS tagging, [ckiplab/oldhan-bert-base-chinese-pos](https://huggingface.co/ckiplab/oldhan-bert-base-chinese-pos?) recognizes parts of speech in a given text. The task is formulated as labeling each word with a part of the speech.
 
     ```python
-    >>> from transformers import pipeline
-    >>> classifier = pipeline("token-classification", model="ckiplab/oldhan-bert-base-chinese-pos")
-    >>> classifier("帝堯曰放勳")
+    from transformers import pipeline
 
+    # Initialize
+    classifier = pipeline("token-classification", model="ckiplab/oldhan-bert-base-chinese-pos")
+
+    # Input text
+    classifier("帝堯曰放勳")
+
+    # output
     [{'entity': 'NB1',
     'score': 0.99410427,
     'index': 1,
