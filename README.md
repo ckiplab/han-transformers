@@ -3,7 +3,7 @@
 This project provides ancient Chinese models to NLP tasks including language modeling, word segmentation and part-of-speech tagging.
 
 ## Dependency
-* transformers
+* transformers &le; 4.15.0
 * pytorch
 
 ## Models
@@ -19,8 +19,8 @@ We uploaded our models to HuggingFace hub.
 
 ### Installation
 ```bash
-pip install transformers
-pip install torch
+pip install transformers==4.15.0
+pip install torch==1.10.2
 ```
 
 ### Inference
