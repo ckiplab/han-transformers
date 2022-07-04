@@ -1,6 +1,6 @@
-# Oldhan Transformers
+# Han Transformers
 
-This project provides oldhan Chinese models to NLP tasks including language modeling, word segmentation and part-of-speech tagging.
+This project provides ancient Chinese models to NLP tasks including language modeling, word segmentation and part-of-speech tagging.
 
 ## Dependency
 * transformers
@@ -10,10 +10,10 @@ This project provides oldhan Chinese models to NLP tasks including language mode
 
 We uploaded our models to HuggingFace hub.
 * Pretrained models using a masked language modeling (MLM) objective.
-    * [ckiplab/oldhan-bert-base-chinese](https://huggingface.co/ckiplab/oldhan-bert-base-chinese)
+    * [ckiplab/bert-base-han-chinese](https://huggingface.co/ckiplab/bert-base-han-chinese)
 * Fine-tuned models for downstream NLP tasks.
-    * [ckiplab/oldhan-bert-base-chinese-pos](https://huggingface.co/ckiplab/oldhan-bert-base-chinese-pos?) (part-of-speech tagging)
-    * [ckiplab/oldhan-bert-base-chinese-ws](https://huggingface.co/ckiplab/oldhan-bert-base-chinese-ws) (word Segmentation)
+    * [ckiplab/bert-base-han-chinese-pos](https://huggingface.co/ckiplab/bert-base-han-chinese-pos?) (part-of-speech tagging)
+    * [ckiplab/bert-base-han-chinese-ws](https://huggingface.co/ckiplab/bert-base-han-chinese-ws) (word Segmentation)
 
 ## Usage
 
@@ -27,13 +27,13 @@ pip install torch
 
 * Pre-trained Language Model
 
-    You can use [ckiplab/oldhan-bert-base-chinese](https://huggingface.co/ckiplab/oldhan-bert-base-chinese) directly with a pipeline for masked language modeling.
+    You can use [ckiplab/bert-base-han-chinese](https://huggingface.co/ckiplab/bert-base-han-chinese) directly with a pipeline for masked language modeling.
 
     ```python
     from transformers import pipeline
 
     # Initialize 
-    unmasker = pipeline('fill-mask', model='ckiplab/oldhan-bert-base-chinese')
+    unmasker = pipeline('fill-mask', model='ckiplab/bert-base-han-chinese')
 
     # Input text with [MASK]
     unmasker("黎[MASK]於變時雍。")
@@ -61,14 +61,14 @@ pip install torch
     'token_str': '生'}]
     ```
 
-    You can use [ckiplab/oldhan-bert-base-chinese](https://huggingface.co/ckiplab/oldhan-bert-base-chinese) to get the features of a given text in PyTorch.
+    You can use [ckiplab/bert-base-han-chinese](https://huggingface.co/ckiplab/bert-base-han-chinese) to get the features of a given text in PyTorch.
     
     ```python
     from transformers import AutoTokenizer, AutoModel
 
     # Initialize tokenzier and model
-    tokenizer = AutoTokenizer.from_pretrained("ckiplab/oldhan-bert-base-chinese")
-    model = AutoModel.from_pretrained("ckiplab/oldhan-bert-base-chinese")
+    tokenizer = AutoTokenizer.from_pretrained("ckiplab/bert-base-han-chinese")
+    model = AutoModel.from_pretrained("ckiplab/bert-base-han-chinese")
 
     # Input text
     text = "黎民於變時雍。"
@@ -77,20 +77,20 @@ pip install torch
 
     # get encoded token vectors
     output.last_hidden_state    # torch.Tensor with Size([1, 9, 768])
-    
+
     # get encoded sentence vector
     output.pooler_output        # torch.Tensor with Size([1, 768])
     ```
 
 * Part-of-Speech (PoS) Tagging
 
-    In PoS tagging, [ckiplab/oldhan-bert-base-chinese-pos](https://huggingface.co/ckiplab/oldhan-bert-base-chinese-pos?) recognizes parts of speech in a given text. The task is formulated as labeling each word with a part of the speech.
+    In PoS tagging, [ckiplab/bert-base-han-chinese-pos](https://huggingface.co/ckiplab/bert-base-han-chinese-pos) recognizes parts of speech in a given text. The task is formulated as labeling each word with a part of the speech.
 
     ```python
     from transformers import pipeline
 
     # Initialize
-    classifier = pipeline("token-classification", model="ckiplab/oldhan-bert-base-chinese-pos")
+    classifier = pipeline("token-classification", model="ckiplab/bert-base-han-chinese-pos")
 
     # Input text
     classifier("帝堯曰放勳")
@@ -128,12 +128,58 @@ pip install torch
     'end': 5}]
     ```
 
+* Word Segmentation (WS)
+
+    In WS, [ckiplab/bert-base-han-chinese-ws](https://huggingface.co/ckiplab/bert-base-han-chinese-ws) divides written the text into meaningful units - words. The task is formulated as labeling each word with either beginning (B) or inside (I).
+
+    ```python
+    from transformers import pipeline
+
+    # Initialize
+    classifier = pipeline("token-classification", model="ckiplab/bert-base-han-chinese-ws")
+
+    # Input text
+    classifier("帝堯曰放勳")
+
+    # output
+    [{'entity': 'B',
+    'score': 0.9999793,
+    'index': 1,
+    'word': '帝',
+    'start': 0,
+    'end': 1},
+    {'entity': 'I',
+    'score': 0.9915047,
+    'index': 2,
+    'word': '堯',
+    'start': 1,
+    'end': 2},
+    {'entity': 'B',
+    'score': 0.99992275,
+    'index': 3,
+    'word': '曰',
+    'start': 2,
+    'end': 3},
+    {'entity': 'B',
+    'score': 0.99905187,
+    'index': 4,
+    'word': '放',
+    'start': 3,
+    'end': 4},
+    {'entity': 'I',
+    'score': 0.96299917,
+    'index': 5,
+    'word': '勳',
+    'start': 4,
+    'end': 5}]
+    ```
+
 ## Training Corpus
 The copyright of the datasets belongs to the Institute of Linguistics, Academia Sinica.
-* [中央研究院上古漢語標記語料庫](http://lingcorpus.iis.sinica.edu.tw/cgi-bin/kiwi/akiwi/kiwi.sh?ukey=-406192123&qtype=-1)
-* [中央研究院中古漢語語料庫](http://lingcorpus.iis.sinica.edu.tw/cgi-bin/kiwi/dkiwi/kiwi.sh?ukey=852967425&qtype=-1)
-* [中央研究院近代漢語語料庫](http://lingcorpus.iis.sinica.edu.tw/cgi-bin/kiwi/pkiwi/kiwi.sh?ukey=-299696128&qtype=-1)
-* [中央研究院現代漢語語料庫](http://lingcorpus.iis.sinica.edu.tw/cgi-bin/kiwi/mkiwi/kiwi.sh)
+* [中央研究院上古漢語標記語料庫](http://lingcorpus.iis.sinica.edu.tw/cgi-bin/kiwi/akiwi/kiwi.sh)
+* [中央研究院中古漢語語料庫](http://lingcorpus.iis.sinica.edu.tw/cgi-bin/kiwi/dkiwi/kiwi.sh)
+* [中央研究院近代漢語語料庫](http://lingcorpus.iis.sinica.edu.tw/cgi-bin/kiwi/pkiwi/kiwi.sh)
+* [中央研究院現代漢語語料庫](http://asbc.iis.sinica.edu.tw)
 
 
 ## License
