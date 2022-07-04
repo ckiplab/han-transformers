@@ -270,7 +270,7 @@ The copyright of the datasets belongs to the Institute of Linguistics, Academia 
   </tr>
   <tr>
     <td rowspan="5">ckiplab/bert-base-Chinese<BR>w/ finetune on all period MLM</td>
-    <td style="text-align: center;">上古</td>
+    <td><center>上古</center></td>
     <td class="right"><strong>0.9761</strong></td>
     <td class="right">0.8857</td>
     <td class="right">0.8329</td>
