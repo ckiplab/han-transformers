@@ -184,7 +184,7 @@ The copyright of the datasets belongs to the Institute of Linguistics, Academia 
 
 ## Model Performance
 
-* Pre-trained Language Model, **Perplexity &darr;**
+### Pre-trained Language Model, **Perplexity &darr;**
 
 <table>
   <tr>
@@ -255,8 +255,64 @@ The copyright of the datasets belongs to the Institute of Linguistics, Academia 
     }
 </style> -->
 
-* Word Segmentation (WS), F1 score
-
+### Word Segmentation (WS), **F1 score &uarr;**
+<table>
+  <tr>
+    <th rowspan="2">Trained Model</th>
+    <th rowspan="2">WS Training Data</th>
+    <th colspan="4">WS Testing Data</th>
+  </tr>
+  <tr>
+    <th>上古</th>
+    <th>中古</th>
+    <th>近代</th>
+    <th>現代</th>
+  </tr>
+  <tr>
+    <td rowspan="5">ckiplab/bert-base-Chinese w/ finetune on all period MLM</td>
+    <td style="text-align: center;">上古</td>
+    <td class="right"><strong>0.9761</strong></td>
+    <td class="right">0.8857</td>
+    <td class="right">0.8329</td>
+    <td class="right">0.7038</td>
+  </tr>
+  <tr>
+    <td style="text-align: center">中古</td>
+    <td class="right">0.9264</td>
+    <td class="right"><strong>0.9265</strong></td>
+    <td class="right">0.8948</td>
+    <td class="right">0.7838</td>
+  </tr>
+  <tr>
+    <td style="text-align: center">近代</td>
+    <td class="right">0.9087</td>
+    <td class="right">0.9219</td>
+    <td class="right"><strong>0.9465</strong></td>
+    <td class="right">0.8121</td>
+  </tr>
+  <tr>
+    <td style="text-align: center">現代</td>
+    <td class="right">0.8702</td>
+    <td class="right">0.8358</td>
+    <td class="right">0.8494</td>
+    <td class="right"><strong>0.9694</strong></td>
+  </tr>
+  <tr>
+    <td style="text-align: center">All</td>
+    <td class="right">0.9745</td>
+    <td class="right bold">0.92</td>
+    <td class="right">0.941</td>
+    <td class="right">0.9673</td>
+  </tr>
+  <tr>
+    <td>ckiplab/bert-base-chinese-ws</td>
+    <td style="text-align: center">-</td>
+    <td class="right">0.8657</td>
+    <td class="right">0.8291</td>
+    <td class="right">0.8432</td>
+    <td class="right"><strong>0.9813</strong></td>
+  </tr>
+</table>
 
 ## License
 [<img src="https://www.gnu.org/graphics/gplv3-with-text-136x68.png">
