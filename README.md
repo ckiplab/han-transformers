@@ -186,20 +186,6 @@ The copyright of the datasets belongs to the Institute of Linguistics, Academia 
 
 * Pre-trained Language Model, **Perplexity &darr;**
 
-<style>
-    th,td {
-        text-align: center;
-    }
-    td {
-        text-align: center;
-    }
-    .right {
-        text-align: right;
-    }
-    .bold {
-        font-weight: bold;
-    }
-</style>
 <table>
   <tr>
     <th rowspan="2">Trained Model</th>
@@ -257,7 +243,17 @@ The copyright of the datasets belongs to the Institute of Linguistics, Academia 
     <td class="right">8.8521</td>
   </tr>
 </table>
-
+<style>
+    th,td {
+        text-align: center;
+    }
+    .right {
+        text-align: right;
+    }
+    .bold {
+        font-weight: bold;
+    }
+</style>
 
 * Word Segmentation (WS), F1 score
 
