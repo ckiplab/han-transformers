@@ -200,35 +200,35 @@ The copyright of the datasets belongs to the Institute of Linguistics, Academia 
   </tr>
   <tr>
     <td rowspan="5">ckiplab/bert-base-Chinese</td>
-    <td>上古</td>
+    <td style="text-align: center">上古</td>
     <td class="right bold"><strong>24.7588</strong></td>
     <td class="right">87.8176</td>
     <td class="right">297.1111</td>
     <td class="right">60.3993</td>
   </tr>
   <tr>
-    <td>中古</td>
+    <td style="text-align: center">中古</td>
     <td class="right">67.861</td>
     <td class="right">70.6244</td>
     <td class="right">133.0536</td>
     <td class="right">23.0125</td>
   </tr>
   <tr>
-    <td>近代</td>
+    <td style="text-align: center">近代</td>
     <td class="right">69.1364</td>
     <td class="right">77.4154</td>
     <td class="right bold"><strong>46.8308</strong></td>
     <td class="right">20.4289</td>
   </tr>
   <tr>
-    <td>現代</td>
+    <td style="text-align: center">現代</td>
     <td class="right">118.8596</td>
     <td class="right">163.6896</td>
     <td class="right">146.5959</td>
     <td class="right">4.6143</td>
   </tr>
   <tr>
-    <td>All</td>
+    <td style="text-align: center">All</td>
     <td class="right">31.1807</td>
     <td class="right bold"><strong>61.2381</strong></td>
     <td class="right">49.0672</td>
@@ -236,7 +236,7 @@ The copyright of the datasets belongs to the Institute of Linguistics, Academia 
   </tr>
   <tr>
     <td>ckiplab/bert-base-chinese</td>
-    <td>-</td>
+    <td style="text-align: center">-</td>
     <td class="right">233.6394</td>
     <td class="right">405.9008</td>
     <td class="right">278.7069</td>
