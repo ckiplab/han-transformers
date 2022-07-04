@@ -25,7 +25,7 @@ pip install torch
 
 ### Inference
 
-* Pre-trained Language Model
+* **Pre-trained Language Model**
 
     You can use [ckiplab/bert-base-han-chinese](https://huggingface.co/ckiplab/bert-base-han-chinese) directly with a pipeline for masked language modeling.
 
@@ -82,7 +82,7 @@ pip install torch
     output.pooler_output        # torch.Tensor with Size([1, 768])
     ```
 
-* Word Segmentation (WS)
+* **Word Segmentation (WS)**
 
     In WS, [ckiplab/bert-base-han-chinese-ws](https://huggingface.co/ckiplab/bert-base-han-chinese-ws) divides written the text into meaningful units - words. The task is formulated as labeling each word with either beginning (B) or inside (I).
 
@@ -128,7 +128,7 @@ pip install torch
     'end': 5}]
     ```
 
-* Part-of-Speech (PoS) Tagging
+* **Part-of-Speech (PoS) Tagging**
 
     In PoS tagging, [ckiplab/bert-base-han-chinese-pos](https://huggingface.co/ckiplab/bert-base-han-chinese-pos) recognizes parts of speech in a given text. The task is formulated as labeling each word with a part of the speech.
 
@@ -270,7 +270,7 @@ The copyright of the datasets belongs to the Institute of Linguistics, Academia 
   </tr>
   <tr>
     <td rowspan="5">ckiplab/bert-base-Chinese<BR>w/ finetune on all period MLM</td>
-    <td><center>上古</center></td>
+    <td style="text-align: center">上古</td>
     <td class="right"><strong>0.9761</strong></td>
     <td class="right">0.8857</td>
     <td class="right">0.8329</td>
