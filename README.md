@@ -200,7 +200,7 @@ The copyright of the datasets belongs to the Institute of Linguistics, Academia 
   </tr>
   <tr>
     <td rowspan="5">ckiplab/bert-base-Chinese</td>
-    <td style="text-align: center">上古</td>
+    <td style="text-align: center;">上古</td>
     <td class="right bold"><strong>24.7588</strong></td>
     <td class="right">87.8176</td>
     <td class="right">297.1111</td>
