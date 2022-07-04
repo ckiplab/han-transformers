@@ -37,8 +37,7 @@ pip install torch
 
     # Input text with [MASK]
     unmasker("黎[MASK]於變時雍。")
-    ```
-    ```json
+    
     # output
     [{'sequence': '黎 民 於 變 時 雍 。',
     'score': 0.14885780215263367,
