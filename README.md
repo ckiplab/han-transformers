@@ -190,6 +190,9 @@ The copyright of the datasets belongs to the Institute of Linguistics, Academia 
     th,td {
         text-align: center;
     }
+    td {
+        text-align: center;
+    }
     .right {
         text-align: right;
     }
