@@ -217,7 +217,7 @@ The copyright of the datasets belongs to the Institute of Linguistics, Academia 
     <td>近代</td>
     <td class="right">69.1364</td>
     <td class="right">77.4154</td>
-    <td class="right bold">46.8308</td>
+    <td class="right bold"><strong>46.8308</strong></td>
     <td class="right">20.4289</td>
   </tr>
   <tr>
@@ -230,9 +230,9 @@ The copyright of the datasets belongs to the Institute of Linguistics, Academia 
   <tr>
     <td>All</td>
     <td class="right">31.1807</td>
-    <td class="right bold">61.2381</td>
+    <td class="right bold"><strong>61.2381</strong></td>
     <td class="right">49.0672</td>
-    <td class="right bold">4.5017</td>
+    <td class="right bold"><strong>4.5017</strong></td>
   </tr>
   <tr>
     <td>ckiplab/bert-base-chinese</td>
@@ -243,7 +243,7 @@ The copyright of the datasets belongs to the Institute of Linguistics, Academia 
     <td class="right">8.8521</td>
   </tr>
 </table>
-<style>
+<!-- <style>
     th,td {
         text-align: center;
     }
@@ -253,7 +253,7 @@ The copyright of the datasets belongs to the Institute of Linguistics, Academia 
     .bold {
         font-weight: bold;
     }
-</style>
+</style> -->
 
 * Word Segmentation (WS), F1 score
 
