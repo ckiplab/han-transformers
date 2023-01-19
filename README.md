@@ -2,6 +2,8 @@
 
 This project provides ancient Chinese models to NLP tasks including language modeling, word segmentation and part-of-speech tagging.
 
+Our paper has been accepted to ROCLING. Please check out our [paper](https://aclanthology.org/2022.rocling-1.21/).
+
 ## Dependency
 * transformers &le; 4.15.0
 * pytorch
@@ -11,9 +13,27 @@ This project provides ancient Chinese models to NLP tasks including language mod
 We uploaded our models to HuggingFace hub.
 * Pretrained models using a masked language modeling (MLM) objective.
     * [ckiplab/bert-base-han-chinese](https://huggingface.co/ckiplab/bert-base-han-chinese)
-* Fine-tuned models for downstream NLP tasks.
-    * [ckiplab/bert-base-han-chinese-pos](https://huggingface.co/ckiplab/bert-base-han-chinese-pos?) (part-of-speech tagging)
-    * [ckiplab/bert-base-han-chinese-ws](https://huggingface.co/ckiplab/bert-base-han-chinese-ws) (word Segmentation)
+* Fine-tuned models for word Segmentation.
+    * [ckiplab/bert-base-han-chinese-ws](https://huggingface.co/ckiplab/bert-base-han-chinese-ws) (Merge)
+    * [ckiplab/bert-base-han-chinese-ws-shanggu](https://huggingface.co/ckiplab/bert-base-han-chinese-ws-shanggu) (上古)
+    * [ckiplab/bert-base-han-chinese-ws-zhonggu](https://huggingface.co/ckiplab/bert-base-han-chinese-ws-zhonggu) (中古)
+    * [ckiplab/bert-base-han-chinese-ws-jindai](https://huggingface.co/ckiplab/bert-base-han-chinese-ws-jindai) (近代)
+    * [ckiplab/bert-base-han-chinese-ws-xiandai](https://huggingface.co/ckiplab/bert-base-han-chinese-ws-xiandai) (現代)
+* Fine-tuned models for part-of-speech tagging.
+    * [ckiplab/bert-base-han-chinese-pos](https://huggingface.co/ckiplab/bert-base-han-chinese-pos?) (Merge)
+    * [ckiplab/bert-base-han-chinese-pos-shanggu](https://huggingface.co/ckiplab/bert-base-han-chinese-pos-shanggu) (上古 / [標記列表](shanggu.md))
+    * [ckiplab/bert-base-han-chinese-pos-zhonggu](https://huggingface.co/ckiplab/bert-base-han-chinese-pos-zhonggu) (中古 / [標記列表](zhonggu.md))
+    * [ckiplab/bert-base-han-chinese-pos-jindai](https://huggingface.co/ckiplab/bert-base-han-chinese-pos-jindai) (近代 / [標記列表](jindai.md))
+    * [ckiplab/bert-base-han-chinese-pos-xiandai](https://huggingface.co/ckiplab/bert-base-han-chinese-pos-xiandai) (現代 / [標記列表](xiandai.md))
+
+
+## Training Corpus
+The copyright of the datasets belongs to the Institute of Linguistics, Academia Sinica.
+* [中央研究院上古漢語標記語料庫](http://lingcorpus.iis.sinica.edu.tw/cgi-bin/kiwi/akiwi/kiwi.sh)
+* [中央研究院中古漢語語料庫](http://lingcorpus.iis.sinica.edu.tw/cgi-bin/kiwi/dkiwi/kiwi.sh)
+* [中央研究院近代漢語語料庫](http://lingcorpus.iis.sinica.edu.tw/cgi-bin/kiwi/pkiwi/kiwi.sh)
+* [中央研究院現代漢語語料庫](http://asbc.iis.sinica.edu.tw)
+
 
 ## Usage
 
@@ -174,13 +194,6 @@ pip install torch==1.10.2
     'end': 5}]
     ```
 
-## Training Corpus
-The copyright of the datasets belongs to the Institute of Linguistics, Academia Sinica.
-* [中央研究院上古漢語標記語料庫](http://lingcorpus.iis.sinica.edu.tw/cgi-bin/kiwi/akiwi/kiwi.sh)
-* [中央研究院中古漢語語料庫](http://lingcorpus.iis.sinica.edu.tw/cgi-bin/kiwi/dkiwi/kiwi.sh)
-* [中央研究院近代漢語語料庫](http://lingcorpus.iis.sinica.edu.tw/cgi-bin/kiwi/pkiwi/kiwi.sh)
-* [中央研究院現代漢語語料庫](http://asbc.iis.sinica.edu.tw)
-
 
 ## Model Performance
 
@@ -319,3 +332,19 @@ The copyright of the datasets belongs to the Institute of Linguistics, Academia 
 ](https://www.gnu.org/licenses/gpl-3.0.html)
 
 Copyright (c) 2022 [CKIP Lab](https://ckip.iis.sinica.edu.tw/) under the [GPL-3.0 License](https://www.gnu.org/licenses/gpl-3.0.html).
+
+## Citation
+Please cite our paper if you use Han-Transformers in your work:
+
+```bibtex
+@inproceedings{lin-ma-2022-hantrans,
+    title = "{H}an{T}rans: An Empirical Study on Cross-Era Transferability of {C}hinese Pre-trained Language Model",
+    author = "Lin, Chin-Tung  and  Ma, Wei-Yun",
+    booktitle = "Proceedings of the 34th Conference on Computational Linguistics and Speech Processing (ROCLING 2022)",
+    year = "2022",
+    address = "Taipei, Taiwan",
+    publisher = "The Association for Computational Linguistics and Chinese Language Processing (ACLCLP)",
+    url = "https://aclanthology.org/2022.rocling-1.21",
+    pages = "164--173",
+}
+```
