@@ -201,7 +201,7 @@ pip install torch==1.10.2
 
 <table>
   <tr>
-    <th rowspan="2">Trained Model</th>
+    <th rowspan="2">Language Model</th>
     <th rowspan="2">MLM Training Data</th>
     <th colspan="4">MLM Testing Data</th>
   </tr>
@@ -212,7 +212,7 @@ pip install torch==1.10.2
     <th>現代</th>
   </tr>
   <tr>
-    <td rowspan="5">ckiplab/bert-base-Chinese</td>
+    <td rowspan="5">ckiplab/bert-base-han-Chinese</td>
     <td style="text-align: center;">上古</td>
     <td class="right bold"><strong>24.7588</strong></td>
     <td class="right">87.8176</td>
@@ -241,7 +241,7 @@ pip install torch==1.10.2
     <td class="right">4.6143</td>
   </tr>
   <tr>
-    <td style="text-align: center">All</td>
+    <td style="text-align: center">Merge</td>
     <td class="right">31.1807</td>
     <td class="right bold"><strong>61.2381</strong></td>
     <td class="right">49.0672</td>
@@ -268,12 +268,12 @@ pip install torch==1.10.2
     }
 </style> -->
 
-### Word Segmentation (WS), **F1 score &uarr;**
+### Word Segmentation (WS), **F1 score (%) &uarr;**
 <table>
   <tr>
-    <th rowspan="2">Trained Model</th>
-    <th rowspan="2">WS Training Data</th>
-    <th colspan="4">WS Testing Data</th>
+    <th rowspan="2">WS Model</th>
+    <th rowspan="2">Training Data</th>
+    <th colspan="4">Testing Data</th>
   </tr>
   <tr>
     <th>上古</th>
@@ -282,50 +282,102 @@ pip install torch==1.10.2
     <th>現代</th>
   </tr>
   <tr>
-    <td rowspan="5">ckiplab/bert-base-Chinese<BR>w/ finetune on all period MLM</td>
+    <td rowspan="5">ckiplab/bert-base-han-chinese-ws</td>
     <td style="text-align: center">上古</td>
-    <td class="right"><strong>0.9761</strong></td>
-    <td class="right">0.8857</td>
-    <td class="right">0.8329</td>
-    <td class="right">0.7038</td>
+    <td class="right"><strong>97.6090</strong></td>
+    <td class="right">88.5734</td>
+    <td class="right"> 83.2877</td>
+    <td class="right">70.3772</td>
   </tr>
   <tr>
     <td style="text-align: center">中古</td>
-    <td class="right">0.9264</td>
-    <td class="right"><strong>0.9265</strong></td>
-    <td class="right">0.8948</td>
-    <td class="right">0.7838</td>
+    <td class="right">92.6402</td>
+    <td class="right"><strong>92.6538</strong></td>
+    <td class="right">89.4803</td>
+    <td class="right">78.3827</td>
   </tr>
   <tr>
     <td style="text-align: center">近代</td>
-    <td class="right">0.9087</td>
-    <td class="right">0.9219</td>
-    <td class="right"><strong>0.9465</strong></td>
-    <td class="right">0.8121</td>
+    <td class="right">90.8651</td>
+    <td class="right">92.1861</td>
+    <td class="right"><strong>94.6495</strong></td>
+    <td class="right">81.2143</td>
   </tr>
   <tr>
     <td style="text-align: center">現代</td>
-    <td class="right">0.8702</td>
-    <td class="right">0.8358</td>
-    <td class="right">0.8494</td>
-    <td class="right"><strong>0.9694</strong></td>
+    <td class="right">87.0234</td>
+    <td class="right">83.5810</td>
+    <td class="right">84.9370</td>
+    <td class="right"><strong>96.9446</strong></td>
   </tr>
   <tr>
-    <td style="text-align: center">All</td>
-    <td class="right">0.9745</td>
-    <td class="right bold">0.92</td>
-    <td class="right">0.941</td>
-    <td class="right">0.9673</td>
+    <td style="text-align: center">Merge</td>
+    <td class="right">97.4537</td>
+    <td class="right bold">91.9990</td>
+    <td class="right">94.0970</td>
+    <td class="right">96.7314</td>
   </tr>
   <tr>
     <td>ckiplab/bert-base-chinese-ws</td>
     <td style="text-align: center">-</td>
-    <td class="right">0.8657</td>
-    <td class="right">0.8291</td>
-    <td class="right">0.8432</td>
-    <td class="right"><strong>0.9813</strong></td>
+    <td class="right">86.5698</td>
+    <td class="right">82.9115</td>
+    <td class="right">84.3213</td>
+    <td class="right"><strong>98.1325</strong></td>
   </tr>
 </table>
+
+### Part-of-Speech (POS) Tagging, **F1 score (%) &uarr;**
+<table>
+  <tr>
+    <th rowspan="2">POS Model</th>
+    <th rowspan="2">Training Data</th>
+    <th colspan="4">Testing Data</th>
+  </tr>
+  <tr>
+    <th>上古</th>
+    <th>中古</th>
+    <th>近代</th>
+    <th>現代</th>
+  </tr>
+  <tr>
+    <td rowspan="5">ckiplab/bert-base-han-chinese-pos</td>
+    <td style="text-align: center">上古</td>
+    <td class="right"><strong>91.2945</strong></td>
+    <td class="right">-</td>
+    <td class="right">-</td>
+    <td class="right">-</td>
+  </tr>
+  <tr>
+    <td style="text-align: center">中古</td>
+    <td class="right">7.3662</td>
+    <td class="right"><strong>80.4896</strong></td>
+    <td class="right">11.3371</td>
+    <td class="right">10.2577</td>
+  </tr>
+  <tr>
+    <td style="text-align: center">近代</td>
+    <td class="right">6.4794</td>
+    <td class="right"> 14.3653</td>
+    <td class="right"><strong>88.6580</strong></td>
+    <td class="right">0.5316</td>
+  </tr>
+  <tr>
+    <td style="text-align: center">現代</td>
+    <td class="right">11.9895</td>
+    <td class="right">11.0775</td>
+    <td class="right">0.4033</td>
+    <td class="right"><strong>93.2813</strong></td>
+  </tr>
+  <tr>
+    <td style="text-align: center">Merge</td>
+    <td class="right">88.8772</td>
+    <td class="right bold">42.4369</td>
+    <td class="right">86.9093</td>
+    <td class="right">92.9012</td>
+  </tr>
+</table>
+
 
 ## License
 [<img src="https://www.gnu.org/graphics/gplv3-with-text-136x68.png">
