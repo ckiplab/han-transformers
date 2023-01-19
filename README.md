@@ -2,7 +2,7 @@
 
 This project provides ancient Chinese models to NLP tasks including language modeling, word segmentation and part-of-speech tagging.
 
-Our paper has been accepted to ROCLING. Please check out our [paper](https://aclanthology.org/2022.rocling-1.21/).
+Our paper has been accepted to ROCLING! Please check out our [paper](https://aclanthology.org/2022.rocling-1.21/).
 
 ## Dependency
 * transformers &le; 4.15.0
@@ -13,13 +13,13 @@ Our paper has been accepted to ROCLING. Please check out our [paper](https://acl
 We uploaded our models to HuggingFace hub.
 * Pretrained models using a masked language modeling (MLM) objective.
     * [ckiplab/bert-base-han-chinese](https://huggingface.co/ckiplab/bert-base-han-chinese)
-* Fine-tuned models for word Segmentation.
+* Fine-tuned models for Word Segmentation.
     * [ckiplab/bert-base-han-chinese-ws](https://huggingface.co/ckiplab/bert-base-han-chinese-ws) (Merge)
     * [ckiplab/bert-base-han-chinese-ws-shanggu](https://huggingface.co/ckiplab/bert-base-han-chinese-ws-shanggu) (上古)
     * [ckiplab/bert-base-han-chinese-ws-zhonggu](https://huggingface.co/ckiplab/bert-base-han-chinese-ws-zhonggu) (中古)
     * [ckiplab/bert-base-han-chinese-ws-jindai](https://huggingface.co/ckiplab/bert-base-han-chinese-ws-jindai) (近代)
     * [ckiplab/bert-base-han-chinese-ws-xiandai](https://huggingface.co/ckiplab/bert-base-han-chinese-ws-xiandai) (現代)
-* Fine-tuned models for part-of-speech tagging.
+* Fine-tuned models for Part-of-Speech tagging.
     * [ckiplab/bert-base-han-chinese-pos](https://huggingface.co/ckiplab/bert-base-han-chinese-pos?) (Merge)
     * [ckiplab/bert-base-han-chinese-pos-shanggu](https://huggingface.co/ckiplab/bert-base-han-chinese-pos-shanggu) (上古 / [標記列表](shanggu.md))
     * [ckiplab/bert-base-han-chinese-pos-zhonggu](https://huggingface.co/ckiplab/bert-base-han-chinese-pos-zhonggu) (中古 / [標記列表](zhonggu.md))
